@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ランダムなUUID（v4）を一括生成。データベースのIDやテスト用データに最適。" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1298950542115439"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="app">
+            <div class="glass-panel tool-view">
+                <h2 style="font-size: 1.5rem; margin-bottom: 20px;">🆔 UUID 生成</h2>
+
+                <div class="input-group">
+                    <label class="input-label">生成数 (最大1000個)</label>
+                    <div style="display:flex; gap:10px;">
+                        <input type="number" id="gen-count" class="glass-input" value="1" min="1" max="1000">
+                        <button id="gen-btn" class="glass-btn"
+                            style="flex:1; border-color: var(--accent-color);">生成する</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">結果</label>
+                    <textarea id="uuid-output" class="glass-input" rows="10" readonly
+                        placeholder="生成されたUUIDがここに表示されます"></textarea>
+                    <button id="copy-btn" class="glass-btn" style="width:100%; margin-top:10px;">結果をコピー</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/tools/uuid/index.js"></script>
+</body>
+
+</html>

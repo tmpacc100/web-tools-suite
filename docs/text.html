@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="リアルタイムで文字数、単語数、行数をカウント。スペースを含める・含めないの切り替えも可能。" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1298950542115439"
+        crossorigin="anonymous"></script>
+  <script type="module" crossorigin src="/assets/text-BJ3wIUUQ.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/layout-I_7HUYsd.js">
+  <link rel="stylesheet" crossorigin href="/assets/style-DlZ-35UA.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="app">
+            <div class="glass-panel tool-view">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
+                    <h2 style="font-size: 1.5rem;">📝 文字数カウント</h2>
+                </div>
+
+                <textarea id="text-input" class="glass-input" rows="10" placeholder="ここにテキストを入力してください..."
+                    style="resize: vertical; margin-bottom: 20px;"></textarea>
+
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin-bottom: 20px;">
+                    <div class="glass-panel"
+                        style="padding: 16px; text-align: center; border-color: rgba(255,255,255,0.05);">
+                        <div style="font-size: 0.9rem; color: #94a3b8;">文字数 (全て)</div>
+                        <div id="count-all" style="font-size: 1.5rem; font-weight: bold; color: var(--accent-color);">0
+                        </div>
+                    </div>
+                    <div class="glass-panel"
+                        style="padding: 16px; text-align: center; border-color: rgba(255,255,255,0.05);">
+                        <div style="font-size: 0.9rem; color: #94a3b8;">文字数 (空白なし)</div>
+                        <div id="count-no-space" style="font-size: 1.5rem; font-weight: bold;">0</div>
+                    </div>
+                    <div class="glass-panel"
+                        style="padding: 16px; text-align: center; border-color: rgba(255,255,255,0.05);">
+                        <div style="font-size: 0.9rem; color: #94a3b8;">行数</div>
+                        <div id="count-lines" style="font-size: 1.5rem; font-weight: bold;">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

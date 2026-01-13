@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="崩れたJSONを見やすく整形（フォーマット）したり、圧縮（Minify）したり、構文エラーをチェックできます。" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1298950542115439"
+        crossorigin="anonymous"></script>
+  <script type="module" crossorigin src="/assets/json-DtnJ8IBt.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/layout-I_7HUYsd.js">
+  <link rel="stylesheet" crossorigin href="/assets/style-DlZ-35UA.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="app">
+            <div class="glass-panel tool-view">
+                <h2 style="font-size: 1.5rem; margin-bottom: 20px;">🔧 JSON 整形</h2>
+
+                <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                    <button id="action-format" class="glass-btn active"
+                        style="flex:1; border-color: var(--accent-color);">整形 (Beautify)</button>
+                    <button id="action-minify" class="glass-btn" style="flex:1;">圧縮 (Minify)</button>
+                </div>
+
+                <textarea id="json-input" class="glass-input" rows="15" placeholder='{"key": "value"}'
+                    style="font-family: monospace; white-space: pre; overflow-x: auto;"></textarea>
+
+                <div id="error-msg" style="color: #ef4444; margin-top: 10px; display: none;"></div>
+
+                <div style="margin-top: 20px; display: flex; justify-content: flex-end;">
+                    <button id="copy-btn" class="glass-btn">コピー</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

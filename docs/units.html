@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="長さ、重さ、データサイズ、温度などの単位を簡単に変換。" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1298950542115439"
+        crossorigin="anonymous"></script>
+  <script type="module" crossorigin src="/assets/units-CQJvU6UZ.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/layout-I_7HUYsd.js">
+  <link rel="stylesheet" crossorigin href="/assets/style-DlZ-35UA.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="app">
+            <div class="glass-panel tool-view">
+                <h2 style="font-size: 1.5rem; margin-bottom: 20px;">📏 単位変換</h2>
+
+                <div class="input-group">
+                    <label class="input-label">カテゴリー</label>
+                    <select id="unit-category" class="glass-input">
+                        <option value="length">長さ (Length)</option>
+                        <option value="weight">重さ (Weight)</option>
+                        <option value="data">データ (Data)</option>
+                        <option value="temp">温度 (Temperature)</option>
+                    </select>
+                </div>
+
+                <div style="display: flex; gap: 20px; align-items: center;">
+                    <div style="flex:1">
+                        <input type="number" id="input-val" class="glass-input" value="1">
+                        <select id="unit-from" class="glass-input" style="margin-top: 10px;"></select>
+                    </div>
+                    <div style="font-size: 1.5rem;">=</div>
+                    <div style="flex:1">
+                        <input type="number" id="output-val" class="glass-input" readonly>
+                        <select id="unit-to" class="glass-input" style="margin-top: 10px;"></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

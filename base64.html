@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="テキストや画像をBase64形式にエンコード、またはBase64からデコード。" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1298950542115439"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="app">
+            <div class="glass-panel tool-view">
+                <h2 style="font-size: 1.5rem; margin-bottom: 20px;">🔄 Base64 変換</h2>
+
+                <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                    <button id="mode-encode" class="glass-btn active"
+                        style="flex:1; border-color: var(--accent-color);">エンコード (Encode)</button>
+                    <button id="mode-decode" class="glass-btn" style="flex:1;">デコード (Decode)</button>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label" id="input-label">入力 (テキスト)</label>
+                    <textarea id="b64-input" class="glass-input" rows="8" placeholder="変換したいテキストを入力..."></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">結果</label>
+                    <textarea id="b64-output" class="glass-input" rows="8" readonly
+                        placeholder="結果がここに表示されます"></textarea>
+                    <button id="copy-btn" class="glass-btn" style="width:100%; margin-top:10px;">結果をコピー</button>
+                </div>
+
+                <!-- File Input Option for Encode -->
+                <div id="file-area"
+                    style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+                    <h3 style="font-size: 1rem; margin-bottom: 10px;">またはファイルを変換</h3>
+                    <input type="file" id="file-input" class="glass-input">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/tools/base64/index.js"></script>
+</body>
+
+</html>

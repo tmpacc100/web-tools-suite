@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web Tools Suite - 便利で高速なブラウザツール</title>
-    <meta name="description" content="サーバー送信なしで安全・高速に使えるWebツール集。QRコード生成、画像圧縮、パスワード生成など。" />
+    <title>便利で高速なブラウザツール集 - Web Tools Suite</title>
+    <meta name="description" content="サーバー送信なしで安全・高速に使えるWebツール集。QRコード、画像圧縮、パスワード生成など15種類のツール。登録不要ですぐに使えます。" />
     <!-- Google AdSense Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1298950542115439"
         crossorigin="anonymous"></script>
@@ -15,7 +15,7 @@
         .ad-responsive {
             width: 100%;
             height: 90px;
-            /* Visual Placeholder Styles - Removed once ads are live if desired, but good for preview */
+            /* Visual Placeholder Styles */
             background-color: #f0f0f0;
             border: 2px dashed #ccc;
             display: flex;
@@ -45,38 +45,58 @@
 </head>
 
 <body>
-    <!-- Top Ad Placeholder -->
     <div class="container">
-        <div style="text-align: center; margin-bottom: 20px;">
-            <!-- Header Ad Unit -->
-            <ins class="adsbygoogle ad-responsive" style="display:block" data-ad-client="ca-pub-1298950542115439"
-                data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        </div>
+        <main id="app"></main>
     </div>
+    <script type="module">
+        import './src/style.css';
+        import { setupLayout } from './src/layout.js';
 
-    <div class="container">
-        <header class="glass-panel">
-            <a href="/" class="logo" id="home-link">WebTools<span style="color:#fff">Suite</span></a>
-            <!-- Simple nav if needed -->
-            <nav>
-                <!-- Future nav items -->
-            </nav>
-        </header>
+        setupLayout('home', 'ホーム');
 
-        <main id="app">
-            <!-- Content injected by main.js -->
-        </main>
-    </div>
+        const app = document.querySelector('#app');
 
-    <footer>
-        <p>&copy; 2026 Web Tools Suite. All logic runs locally in your browser.<br>
-            <a href="/privacy.html">プライバシーポリシー</a> |
-            <a href="/terms.html">利用規約</a> |
-            <a href="/contact.html">お問い合わせ</a>
+        // Links to all tools
+        const tools = [
+            { id: 'qrcode', title: 'QRコード作成', desc: '色変更・サイズ調整可能なQR作成', icon: '📱', link: '/qrcode.html' },
+            { id: 'image', title: '画像圧縮・変換', desc: 'JPG/PNG/WebP変換と軽量化', icon: '🖼️', link: '/image.html' },
+            { id: 'password', title: 'パスワード生成', desc: '強力なランダムパスワード', icon: '🔒', link: '/password.html' },
+            { id: 'text', title: '文字数カウント', desc: 'リアルタイム行数・単語数計測', icon: '📝', link: '/text.html' },
+            { id: 'base64', title: 'Base64 変換', desc: 'テキスト・画像ファイルの変換', icon: '🔄', link: '/base64.html' },
+            { id: 'json', title: 'JSON 整形', desc: '見やすいフォーマットに整形', icon: '🔧', link: '/json.html' },
+            { id: 'color', title: 'カラー変換', desc: 'HEX, RGB, HSL 相互変換', icon: '🎨', link: '/color.html' },
+            { id: 'uuid', title: 'UUID 生成', desc: 'ランダムな一意IDを大量生成', icon: '🆔', link: '/uuid.html' },
+            { id: 'url', title: 'URL 変換', desc: 'URLエンコード・デコード', icon: '🌐', link: '/url.html' },
+            { id: 'timestamp', title: 'Unix時間変換', desc: '日付とタイムスタンプの変換', icon: '⏰', link: '/timestamp.html' },
+            { id: 'lorem', title: 'ダミーテキスト', desc: 'Lorem Ipsum 文章生成', icon: '📄', link: '/lorem.html' },
+            { id: 'markdown', title: 'Markdown', desc: 'リアルタイムプレビュー', icon: '👁️', link: '/markdown.html' },
+            { id: 'useragent', title: 'UA 解析', desc: 'ブラウザ・機種情報の確認', icon: '🔍', link: '/useragent.html' },
+            { id: 'diff', title: 'テキスト比較', desc: '2つの文章の差分を表示', icon: '⚖️', link: '/diff.html' },
+            { id: 'units', title: '単位変換', desc: '長さ・重さ・データの計算', icon: '📏', link: '/units.html' },
+        ];
+
+        app.innerHTML = `
+      <div class="glass-panel" style="padding: 40px; text-align: center; margin-bottom: 40px;">
+        <h1 style="font-size: 2.5rem; margin-bottom: 16px; background: linear-gradient(90deg, #38bdf8, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+          Web Tools Suite
+        </h1>
+        <p style="color: #cbd5e1; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+          登録不要・インストール不要。すべての処理がブラウザ内で完結する、安全で高速なWebツール集です。
         </p>
-    </footer>
+      </div>
 
-    <script type="module" src="/src/main.js"></script>
+      <div class="tools-grid">
+        ${tools.map(tool => `
+          <div class="glass-panel tool-card" onclick="location.href='${tool.link}'" style="cursor: pointer;">
+            <div class="tool-icon">${tool.icon}</div>
+            <div class="tool-title">${tool.title}</div>
+            <div class="tool-desc">${tool.desc}</div>
+            <!-- <a href="${tool.link}" class="glass-btn">開く</a> -->
+          </div>
+        `).join('')}
+      </div>
+    `;
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="リアルタイムMarkdownプレビューツール。入力したMarkdownを即座にHTML変換して表示します。" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1298950542115439"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="app">
+            <div class="glass-panel tool-view" style="max-width: 1000px;">
+                <h2 style="font-size: 1.5rem; margin-bottom: 20px;">👁️ Markdown プレビュー</h2>
+
+                <div style="display: flex; gap: 20px; height: 600px;">
+                    <div style="flex: 1; display: flex; flex-direction: column;">
+                        <label class="input-label">Markdown 入力</label>
+                        <textarea id="md-input" class="glass-input"
+                            style="flex: 1; resize: none; font-family: monospace;"
+                            placeholder="# Hello World"></textarea>
+                    </div>
+                    <div style="flex: 1; display: flex; flex-direction: column;">
+                        <label class="input-label">プレビュー</label>
+                        <div id="md-preview" class="glass-panel"
+                            style="flex: 1; overflow-y: auto; padding: 20px; background: rgba(255,255,255,0.9); color: #333;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/tools/markdown/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="デザインやレイアウト確認用のダミーテキスト（Lorem Ipsum）を生成します。段落数や長さを調整可能。" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1298950542115439"
+        crossorigin="anonymous"></script>
+  <script type="module" crossorigin src="/assets/lorem-BOw3OeEm.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/layout-I_7HUYsd.js">
+  <link rel="stylesheet" crossorigin href="/assets/style-DlZ-35UA.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="app">
+            <div class="glass-panel tool-view">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
+                    <h2 style="font-size: 1.5rem;">📄 Lorem Ipsum 生成</h2>
+                    <select id="type-select" class="glass-input" style="width: auto;">
+                        <option value="p">段落 (Paragraphs)</option>
+                        <option value="s">文 (Sentences)</option>
+                        <option value="w">単語 (Words)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">生成数</label>
+                    <div style="display:flex; gap:10px;">
+                        <input type="number" id="gen-count" class="glass-input" value="3" min="1" max="50">
+                        <button id="gen-btn" class="glass-btn"
+                            style="flex:1; border-color: var(--accent-color);">生成する</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">結果</label>
+                    <textarea id="lorem-output" class="glass-input" rows="10" readonly></textarea>
+                    <button id="copy-btn" class="glass-btn" style="width:100%; margin-top:10px;">結果をコピー</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

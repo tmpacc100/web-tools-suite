@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="2つのテキストの差分（Diff）を行単位または文字単位で比較して表示します。" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1298950542115439"
+        crossorigin="anonymous"></script>
+    <style>
+        .diff-added {
+            background-color: rgba(69, 219, 137, 0.3);
+            color: #d1fae5;
+        }
+
+        .diff-removed {
+            background-color: rgba(239, 68, 68, 0.3);
+            color: #fee2e2;
+        }
+
+        .diff-no-change {
+            color: #94a3b8;
+        }
+    </style>
+  <script type="module" crossorigin src="/assets/diff-CnaVjGQP.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/layout-I_7HUYsd.js">
+  <link rel="stylesheet" crossorigin href="/assets/style-DlZ-35UA.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="app">
+            <div class="glass-panel tool-view" style="max-width: 1000px;">
+                <h2 style="font-size: 1.5rem; margin-bottom: 20px;">⚖️ テキスト比較 (Diff)</h2>
+
+                <div style="display: flex; gap: 20px;">
+                    <div style="flex:1">
+                        <label class="input-label">元のテキスト (Old)</label>
+                        <textarea id="diff-old" class="glass-input" rows="10"></textarea>
+                    </div>
+                    <div style="flex:1">
+                        <label class="input-label">変更後のテキスト (New)</label>
+                        <textarea id="diff-new" class="glass-input" rows="10"></textarea>
+                    </div>
+                </div>
+
+                <button id="diff-btn" class="glass-btn"
+                    style="width: 100%; margin: 20px 0; border-color: var(--accent-color);">比較する</button>
+
+                <div class="glass-panel"
+                    style="padding: 20px; min-height: 200px; font-family: monospace; white-space: pre-wrap;">
+                    <div id="diff-output">ここに比較結果が表示されます</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

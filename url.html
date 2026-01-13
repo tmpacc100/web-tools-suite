@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="日本語URL（パーセントエンコーディング）の変換ツール。エンコード・デコードをワンクリックで実行。" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1298950542115439"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="app">
+            <div class="glass-panel tool-view">
+                <h2 style="font-size: 1.5rem; margin-bottom: 20px;">🌐 URL変換</h2>
+
+                <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                    <button id="mode-encode" class="glass-btn active"
+                        style="flex:1; border-color: var(--accent-color);">エンコード (Encode)</button>
+                    <button id="mode-decode" class="glass-btn" style="flex:1;">デコード (Decode)</button>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label" id="input-label">入力</label>
+                    <textarea id="url-input" class="glass-input" rows="5" placeholder="https://..."></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">結果</label>
+                    <textarea id="url-output" class="glass-input" rows="5" readonly></textarea>
+                    <button id="copy-btn" class="glass-btn" style="width:100%; margin-top:10px;">結果をコピー</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/tools/url/index.js"></script>
+</body>
+
+</html>

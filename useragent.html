@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="利用中のブラウザ情報（User Agent）を表示・解析。OS、ブラウザバージョン、画面サイズなどを確認。" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1298950542115439"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="app">
+            <div class="glass-panel tool-view">
+                <h2 style="font-size: 1.5rem; margin-bottom: 20px;">🔍 User Agent 解析</h2>
+
+                <div class="glass-panel" style="padding: 20px; margin-bottom: 30px; border-color: var(--accent-color);">
+                    <div style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 5px;">あなたの User Agent</div>
+                    <div id="ua-string" style="font-family: monospace; word-break: break-all;"></div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                    <div class="glass-panel" style="padding: 15px;">
+                        <label class="input-label">ブラウザ</label>
+                        <div id="info-browser" style="font-size: 1.2rem; font-weight: bold;">-</div>
+                    </div>
+                    <div class="glass-panel" style="padding: 15px;">
+                        <label class="input-label">OS / Platform</label>
+                        <div id="info-os" style="font-size: 1.2rem; font-weight: bold;">-</div>
+                    </div>
+                    <div class="glass-panel" style="padding: 15px;">
+                        <label class="input-label">画面サイズ</label>
+                        <div id="info-screen" style="font-size: 1.2rem; font-weight: bold;">-</div>
+                    </div>
+                    <div class="glass-panel" style="padding: 15px;">
+                        <label class="input-label">言語</label>
+                        <div id="info-lang" style="font-size: 1.2rem; font-weight: bold;">-</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/tools/useragent/index.js"></script>
+</body>
+
+</html>

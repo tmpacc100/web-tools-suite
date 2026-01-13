@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ブラウザで画像を圧縮・フォーマット変換（WebP, PNG, JPEG）。サーバー送信なしで高速処理、プライバシーも安心。" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1298950542115439"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="app">
+            <!-- Tool Content -->
+            <div class="glass-panel tool-view">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
+                    <h2 style="font-size: 1.5rem;">🖼️ 画像圧縮・変換</h2>
+                </div>
+
+                <div class="input-group">
+                    <label class="glass-btn"
+                        style="display: block; text-align: center; cursor: pointer; border: 2px dashed var(--glass-border);">
+                        <span>📁 画像ファイルを選択 (またはドラッグ&ドロップ)</span>
+                        <input type="file" id="img-input" accept="image/*" style="display: none;">
+                    </label>
+                    <p id="file-name" style="text-align: center; margin-top: 8px; font-size: 0.9rem; color: #94a3b8;">
+                    </p>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">変換フォーマット</label>
+                    <select id="convert-format" class="glass-input">
+                        <option value="original" selected>元の形式を維持</option>
+                        <option value="image/webp">WebP (推奨・高圧縮)</option>
+                        <option value="image/jpeg">JPEG</option>
+                        <option value="image/png">PNG</option>
+                    </select>
+                </div>
+
+                <div class="input-group" style="display:flex; gap:20px;">
+                    <div style="flex:1">
+                        <label class="input-label">最大サイズ (MB)</label>
+                        <select id="max-size" class="glass-input">
+                            <option value="0.1">0.1 MB</option>
+                            <option value="0.5">0.5 MB</option>
+                            <option value="1" selected>1.0 MB</option>
+                            <option value="2">2.0 MB</option>
+                        </select>
+                    </div>
+                    <div style="flex:1">
+                        <label class="input-label">最大幅</label>
+                        <select id="max-width" class="glass-input">
+                            <option value="800">800px</option>
+                            <option value="1280">1280px</option>
+                            <option value="1920" selected>1920px</option>
+                            <option value="0">制限なし</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button id="compress-btn" class="glass-btn" style="width: 100%; border-color: var(--accent-color);"
+                    disabled>
+                    圧縮・変換を開始
+                </button>
+
+                <div id="img-result" class="result-area" style="display: none;">
+                    <h3 style="margin-bottom: 16px;">完了！</h3>
+                    <p>
+                        元のサイズ: <span id="orig-size"></span><br>
+                        圧縮後: <span id="new-size" style="color: var(--accent-color); font-weight: bold;"></span><br>
+                        <span id="percent-saved"></span> 削減
+                    </p>
+                    <br>
+                    <a id="download-img" class="glass-btn" download="compressed-image">
+                        画像をダウンロード
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/tools/image/index.js"></script>
+</body>
+
+</html>
