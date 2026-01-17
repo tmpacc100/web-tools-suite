@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>【2026年最新】ローン計算機 - 住宅ローン返済額シミュレーション｜無料</title>
+    <meta name="description"
+        content="住宅ローン・自動車ローンの月々返済額を瞬時に計算。3000万円を年利1.5%で35年借入なら月々91,855円。元利均等返済・ボーナス併用対応。登録不要・完全無料。" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1298950542115439"
+        crossorigin="anonymous"></script>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "ローン計算機",
+      "description": "住宅ローン・自動車ローンの月々返済額を計算する無料ツール",
+      "url": "https://tmpacc100.github.io/loan.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "JPY"
+      },
+      "featureList": "元利均等返済計算、ボーナス併用返済、総利息計算"
+    }
+    </script>
+
+    <!-- Open Graph Protocol -->
+    <meta property="og:title" content="【2026年最新】ローン計算機 - 住宅ローン返済額シミュレーション">
+    <meta property="og:description" content="住宅ローン・自動車ローンの月々返済額を瞬時に計算。完全無料・登録不要。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tmpacc100.github.io/loan.html">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="【2026年最新】ローン計算機">
+    <meta name="twitter:description" content="住宅ローン・自動車ローンの月々返済額を瞬時に計算">
+</head>
+
+<body>
+    <div class="container">
+        <div id="app">
+            <!-- Tool Content -->
+            <div class="glass-panel tool-view">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
+                    <h2 style="font-size: 1.5rem;">💰 ローン計算機</h2>
+                </div>
+
+                <!-- Input Form -->
+                <div style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 24px;">
+                    <div>
+                        <label class="input-label">借入金額（万円）</label>
+                        <input type="number" id="loan-amount" class="glass-input" value="3000" min="1" step="100"
+                            placeholder="例: 3000">
+                    </div>
+
+                    <div>
+                        <label class="input-label">年利率（%）</label>
+                        <input type="number" id="loan-rate" class="glass-input" value="1.5" min="0" max="20" step="0.1"
+                            placeholder="例: 1.5">
+                    </div>
+
+                    <div>
+                        <label class="input-label">返済期間（年）</label>
+                        <input type="number" id="loan-years" class="glass-input" value="35" min="1" max="50"
+                            placeholder="例: 35">
+                    </div>
+
+                    <div>
+                        <label class="input-label">ボーナス返済額（年2回、万円）</label>
+                        <input type="number" id="bonus-amount" class="glass-input" value="0" min="0" step="10"
+                            placeholder="例: 0（なしの場合）">
+                    </div>
+                </div>
+
+                <button id="calc-btn" class="glass-btn"
+                    style="width: 100%; border-color: var(--accent-color); font-size: 1.1rem;">
+                    計算する
+                </button>
+
+                <!-- Result Display -->
+                <div id="result" style="margin-top: 24px; display: none;">
+                    <div class="glass-panel" style="padding: 20px; background: rgba(56, 189, 248, 0.05);">
+                        <h3 style="margin-bottom: 16px; color: var(--accent-color);">計算結果</h3>
+                        <div style="display: grid; gap: 12px;">
+                            <div
+                                style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <span>月々の返済額</span>
+                                <strong id="monthly-payment"
+                                    style="color: var(--accent-color); font-size: 1.2rem;">-</strong>
+                            </div>
+                            <div
+                                style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <span>年2回のボーナス返済額</span>
+                                <strong id="bonus-payment">-</strong>
+                            </div>
+                            <div
+                                style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <span>総返済額</span>
+                                <strong id="total-payment">-</strong>
+                            </div>
+                            <div
+                                style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <span>うち利息</span>
+                                <strong id="total-interest" style="color: #f87171;">-</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEO Content -->
+                <div class="seo-section">
+                    <article class="seo-content">
+                        <h2>ローン計算機とは？</h2>
+                        <p>
+                            住宅ローン、自動車ローン、教育ローンなど、あらゆる借入の<strong>月々の返済額</strong>と<strong>総支払額</strong>を計算できる無料ツールです。
+                            借入金額、金利、返済期間を入力するだけで、元利均等返済方式による正確なシミュレーションが可能です。
+                        </p>
+
+                        <h2>主な特徴</h2>
+                        <ul>
+                            <li><strong>元利均等返済方式</strong>: 毎月一定額を返済する、最も一般的な返済方法で計算します。</li>
+                            <li><strong>ボーナス併用可能</strong>: 年2回のボーナス返済を含めた計算にも対応しています。</li>
+                            <li><strong>総利息の明示</strong>: 借入金額に加えて、支払う利息の総額も表示されます。</li>
+                            <li><strong>プライバシー保護</strong>: すべての計算がブラウザ内で完結し、データはサーバーに送信されません。</li>
+                        </ul>
+
+                        <h2>使い方</h2>
+                        <ol>
+                            <li><strong>借入金額</strong>を万円単位で入力（例: 住宅ローン3,000万円なら「3000」）</li>
+                            <li><strong>年利率</strong>をパーセントで入力（例: 1.5%なら「1.5」）</li>
+                            <li><strong>返済期間</strong>を年数で入力（例: 35年なら「35」）</li>
+                            <li>ボーナス返済がある場合は、年2回の返済額を万円単位で入力</li>
+                            <li>「計算する」ボタンをクリック</li>
+                        </ol>
+
+                        <h2>よくある質問 (FAQ)</h2>
+                        <div class="faq-item">
+                            <div class="faq-question">元利均等返済とは何ですか？</div>
+                            <div class="faq-answer">毎月の返済額（元金+利息）が一定になる返済方式です。返済初期は利息の割合が多く、徐々に元金の割合が増えていきます。</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">ボーナス返済を併用すべきですか？</div>
+                            <div class="faq-answer">ボーナスの確実性によります。ボーナスが減額・廃止されるリスクがある場合は、月々の返済のみで計画する方が安全です。</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">計算結果は正確ですか？</div>
+                            <div class="faq-answer">
+                                元利均等返済方式の一般的な計算式に基づいていますが、実際の返済額は金融機関の手数料や保証料により異なる場合があります。あくまで参考値としてご利用ください。</div>
+                        </div>
+
+                        <h3>免責事項</h3>
+                        <p style="font-size: 0.9rem; color: #94a3b8;">
+                            本ツールの計算結果は参考値です。実際のローン条件、返済額は金融機関により異なります。
+                            正式な借入条件については、必ず金融機関にご確認ください。
+                        </p>
+                    </article>
+
+                    <div class="share-area">
+                        <a href="#" class="share-btn share-x">Xでシェア</a>
+                        <a href="#" class="share-btn share-line">LINEで送る</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/tools/loan/index.js"></script>
+</body>
+
+</html>

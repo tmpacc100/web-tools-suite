@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>【無料】ハッシュ値生成ツール - SHA-256/MD5オンライン計算｜安全</title>
+    <meta name="description"
+        content="テキストやファイルからSHA-256、MD5、SHA-1ハッシュ値を生成。パスワード暗号化、ファイル整合性チェックに。完全クライアントサイドで処理。無料・登録不要。" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1298950542115439"
+        crossorigin="anonymous"></script>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "ハッシュ生成ツール",
+      "description": "SHA-256、MD5、SHA-1ハッシュ値を生成する無料ツール",
+      "url": "https://tmpacc100.github.io/hash.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "JPY"
+      },
+      "featureList": "SHA-256ハッシュ生成、MD5ハッシュ生成、SHA-1ハッシュ生成"
+    }
+    </script>
+
+    <!-- Open Graph Protocol -->
+    <meta property="og:title" content="【無料】ハッシュ値生成ツール - SHA-256/MD5オンライン計算">
+    <meta property="og:description" content="SHA-256、MD5、SHA-1ハッシュ値を安全に生成。無料・登録不要。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tmpacc100.github.io/hash.html">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="【無料】ハッシュ値生成ツール">
+    <meta name="twitter:description" content="SHA-256/MD5ハッシュ値を安全に生成">
+</head>
+
+<body>
+    <div class="container">
+        <div id="app">
+            <div class="glass-panel tool-view">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
+                    <h2 style="font-size: 1.5rem;">🔐 ハッシュ生成</h2>
+                </div>
+
+                <div style="margin-bottom: 24px;">
+                    <label class="input-label">テキスト入力</label>
+                    <textarea id="hash-input" class="glass-input"
+                        style="min-height: 120px; font-family: monospace; resize: vertical;"
+                        placeholder="ハッシュ化するテキストを入力..."></textarea>
+                </div>
+
+                <button id="generate-btn" class="glass-btn"
+                    style="width: 100%; border-color: var(--accent-color); font-size: 1.1rem; margin-bottom: 24px;">
+                    ハッシュを生成
+                </button>
+
+                <div id="results" style="display: none;">
+                    <div class="glass-panel"
+                        style="padding: 20px; background: rgba(56, 189, 248, 0.05); margin-bottom: 16px;">
+                        <div style="margin-bottom: 12px;">
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                <strong style="color: var(--accent-color);">SHA-256</strong>
+                                <button class="copy-hash" data-target="sha256"
+                                    style="background: none; border: 1px solid rgba(255,255,255,0.2); color: white; padding: 4px 12px; border-radius: 4px; cursor: pointer;">コピー</button>
+                            </div>
+                            <div id="sha256"
+                                style="word-break: break-all; font-family: monospace; font-size: 0.9rem; color: #cbd5e1; background: rgba(0,0,0,0.2); padding: 12px; border-radius: 4px;">
+                                -</div>
+                        </div>
+
+                        <div style="margin-bottom: 12px;">
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                <strong style="color: #a78bfa;">SHA-1</strong>
+                                <button class="copy-hash" data-target="sha1"
+                                    style="background: none; border: 1px solid rgba(255,255,255,0.2); color: white; padding: 4px 12px; border-radius: 4px; cursor: pointer;">コピー</button>
+                            </div>
+                            <div id="sha1"
+                                style="word-break: break-all; font-family: monospace; font-size: 0.9rem; color: #cbd5e1; background: rgba(0,0,0,0.2); padding: 12px; border-radius: 4px;">
+                                -</div>
+                        </div>
+
+                        <div>
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                <strong style="color: #f472b6;">MD5</strong>
+                                <button class="copy-hash" data-target="md5"
+                                    style="background: none; border: 1px solid rgba(255,255,255,0.2); color: white; padding: 4px 12px; border-radius: 4px; cursor: pointer;">コピー</button>
+                            </div>
+                            <div id="md5"
+                                style="word-break: break-all; font-family: monospace; font-size: 0.9rem; color: #cbd5e1; background: rgba(0,0,0,0.2); padding: 12px; border-radius: 4px;">
+                                -</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="seo-section">
+                    <article class="seo-content">
+                        <h2>ハッシュ生成ツールとは？</h2>
+                        <p>
+                            ハッシュ関数を使って、任意のテキストから<strong>固定長の文字列（ハッシュ値）</strong>を生成するツールです。
+                            パスワードの暗号化、ファイルの整合性チェック、データの改ざん検出などに使用されます。
+                        </p>
+
+                        <h2>対応アルゴリズム</h2>
+                        <ul>
+                            <li><strong>SHA-256</strong>: 最も安全性が高い。ビットコインなどでも使用。256ビット（64文字）のハッシュ値</li>
+                            <li><strong>SHA-1</strong>: 広く使われているが、やや脆弱性あり。160ビット（40文字）のハッシュ値</li>
+                            <li><strong>MD5</strong>: 高速だが、セキュリティ用途には非推奨。128ビット（32文字）のハッシュ値</li>
+                        </ul>
+
+                        <h2>主な用途</h2>
+                        <ul>
+                            <li><strong>パスワード保存</strong>: 平文ではなくハッシュ値で保存することでセキュリティ向上</li>
+                            <li><strong>ファイル整合性</strong>: ダウンロードしたファイルが改ざんされていないか確認</li>
+                            <li><strong>データ検証</strong>: 大量データの比較を高速化</li>
+                        </ul>
+
+                        <h2>よくある質問 (FAQ)</h2>
+                        <div class="faq-item">
+                            <div class="faq-question">ハッシュから元のテキストに戻せますか？</div>
+                            <div class="faq-answer">いいえ、ハッシュは一方向関数のため、元のテキストに戻すことはできません。これがセキュリティの要となっています。</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">どのアルゴリズムを使うべきですか？</div>
+                            <div class="faq-answer">セキュリティ目的ならSHA-256を推奨します。MD5は高速ですが、暗号学的には安全ではありません。</div>
+                        </div>
+
+                        <h3>免責事項</h3>
+                        <p style="font-size: 0.9rem; color: #94a3b8;">
+                            すべての処理はブラウザ内で完結し、データはサーバーに送信されません。
+                            MD5/SHA-1はセキュリティ用途には推奨されません。重要な暗号化にはSHA-256以上を使用してください。
+                        </p>
+                    </article>
+
+                    <div class="share-area">
+                        <a href="#" class="share-btn share-x">Xでシェア</a>
+                        <a href="#" class="share-btn share-line">LINEで送る</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/tools/hash/index.js"></script>
+</body>
+
+</html>

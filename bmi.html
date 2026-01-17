@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>【無料】BMI計算機 - 標準体重・美容体重・基礎代謝を自動計算｜2026年</title>
+    <meta name="description"
+        content="身長・体重からBMI・適正体重・基礎代謝を計算。170cm/65kgならBMI22.5（標準体重）。男女別・年齢別対応。ダイエット・健康管理に最適。完全無料。" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1298950542115439"
+        crossorigin="anonymous"></script>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "BMI計算機",
+      "description": "BMI・適正体重・基礎代謝量を計算する無料ツール",
+      "url": "https://tmpacc100.github.io/bmi.html",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "JPY"
+      },
+      "featureList": "BMI計算、適正体重計算、美容体重計算、基礎代謝量計算"
+    }
+    </script>
+
+    <!-- Open Graph Protocol -->
+    <meta property="og:title" content="【無料】BMI計算機 - 標準体重・美容体重を自動計算">
+    <meta property="og:description" content="身長・体重からBMI・適正体重・基礎代謝を計算。無料・登録不要。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tmpacc100.github.io/bmi.html">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="【無料】BMI計算機">
+    <meta name="twitter:description" content="BMI・適正体重・基礎代謝を自動計算。ダイエット・健康管理に。">
+</head>
+
+<body>
+    <div class="container">
+        <div id="app">
+            <div class="glass-panel tool-view">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
+                    <h2 style="font-size: 1.5rem;">🏃 BMI計算機</h2>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 24px;">
+                    <div>
+                        <label class="input-label">身長（cm）</label>
+                        <input type="number" id="height" class="glass-input" value="170" min="100" max="250" step="0.1">
+                    </div>
+
+                    <div>
+                        <label class="input-label">体重（kg）</label>
+                        <input type="number" id="weight" class="glass-input" value="65" min="20" max="200" step="0.1">
+                    </div>
+
+                    <div>
+                        <label class="input-label">年齢（歳）</label>
+                        <input type="number" id="age" class="glass-input" value="30" min="1" max="120">
+                    </div>
+
+                    <div>
+                        <label class="input-label">性別</label>
+                        <div style="display: flex; gap: 20px; margin-top: 8px;">
+                            <label style="cursor: pointer;">
+                                <input type="radio" name="gender" value="male" checked
+                                    style="accent-color: var(--accent-color); margin-right: 8px;"> 男性
+                            </label>
+                            <label style="cursor: pointer;">
+                                <input type="radio" name="gender" value="female"
+                                    style="accent-color: var(--accent-color); margin-right: 8px;"> 女性
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="calc-btn" class="glass-btn"
+                    style="width: 100%; border-color: var(--accent-color); font-size: 1.1rem;">
+                    計算する
+                </button>
+
+                <div id="result" style="margin-top: 24px; display: none;">
+                    <div class="glass-panel" style="padding: 20px; background: rgba(56, 189, 248, 0.05);">
+                        <h3 style="margin-bottom: 16px; color: var(--accent-color);">計算結果</h3>
+                        <div style="display: grid; gap: 12px;">
+                            <div
+                                style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 2px solid var(--accent-color);">
+                                <span style="font-size: 1.1rem;">BMI</span>
+                                <strong id="bmi-value" style="color: var(--accent-color); font-size: 1.3rem;">-</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 8px 0;">
+                                <span>判定</span>
+                                <strong id="bmi-status">-</strong>
+                            </div>
+                            <div
+                                style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <span>適正体重</span>
+                                <strong id="ideal-weight">-</strong>
+                            </div>
+                            <div
+                                style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <span>美容体重</span>
+                                <strong id="beauty-weight">-</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 8px 0;">
+                                <span>基礎代謝量</span>
+                                <strong id="bmr" style="color: #a78bfa;">-</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="seo-section">
+                    <article class="seo-content">
+                        <h2>BMI計算機とは？</h2>
+                        <p>
+                            BMI（Body Mass Index）は、身長と体重から算出される<strong>肥満度を表す指標</strong>です。
+                            世界保健機関（WHO）でも採用されており、健康管理やダイエットの目安として広く使用されています。
+                        </p>
+
+                        <h2>BMI判定基準</h2>
+                        <ul>
+                            <li><strong>18.5未満</strong>: 低体重（やせ）</li>
+                            <li><strong>18.5〜25未満</strong>: 普通体重</li>
+                            <li><strong>25〜30未満</strong>: 肥満（1度）</li>
+                            <li><strong>30以上</strong>: 高度肥満</li>
+                        </ul>
+
+                        <h2>計算される項目</h2>
+                        <ul>
+                            <li><strong>BMI</strong>: 体重(kg) ÷ 身長(m)²</li>
+                            <li><strong>適正体重</strong>: BMI 22となる体重（最も病気になりにくい体重）</li>
+                            <li><strong>美容体重</strong>: BMI 20となる体重（見た目が美しいとされる体重）</li>
+                            <li><strong>基礎代謝量</strong>: Harris-Benedict式による1日の消費カロリー</li>
+                        </ul>
+
+                        <h2>よくある質問 (FAQ)</h2>
+                        <div class="faq-item">
+                            <div class="faq-question">BMIだけで健康状態が分かりますか？</div>
+                            <div class="faq-answer">BMIはあくまで目安です。筋肉量や体脂肪率、骨格の違いなどは反映されないため、総合的な健康診断が重要です。</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">適正体重を目指すべきですか？</div>
+                            <div class="faq-answer">BMI 22は統計的に最も健康リスクが低いとされています。ただし、個人差があるため、医師と相談のうえ目標体重を設定してください。
+                            </div>
+                        </div>
+
+                        <h3>免責事項</h3>
+                        <p style="font-size: 0.9rem; color: #94a3b8;">
+                            本ツールの計算結果는参考値です。正確な健康状態の把握や治療については、医療機関にご相談ください。
+                        </p>
+                    </article>
+
+                    <div class="share-area">
+                        <a href="#" class="share-btn share-x">Xでシェア</a>
+                        <a href="#" class="share-btn share-line">LINEで送る</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/tools/bmi/index.js"></script>
+</body>
+
+</html>

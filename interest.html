@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>【2026年版】複利計算機 - 積立投資シミュレーター｜NISAにも対応</title>
+    <meta name="description" content="複利効果を計算して投資シミュレーション。元本、利率、期間から最終金額を算出。積立投資計画の参考に。" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1298950542115439"
+        crossorigin="anonymous"></script>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "複利計算機",
+      "description": "複利効果を計算して投資シミュレーションを行う無料ツール",
+      "url": "https://tmpacc100.github.io/interest.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "JPY"
+      },
+      "featureList": "複利計算、積立投資シミュレーション、長期運用計画"
+    }
+    </script>
+
+    <!-- Open Graph Protocol -->
+    <meta property="og:title" content="【2026年版】複利計算機 - 積立投資シミュレーター">
+    <meta property="og:description" content="複利効果を可視化。積立投資・NISA計画に最適。無料・登録不要。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tmpacc100.github.io/interest.html">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="【2026年版】複利計算機">
+    <meta name="twitter:description" content="投資シミュレーションで複利効果を可視化">
+</head>
+
+<body>
+    <div class="container">
+        <div id="app">
+            <div class="glass-panel tool-view">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
+                    <h2 style="font-size: 1.5rem;">📈 複利計算機</h2>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 24px;">
+                    <div>
+                        <label class="input-label">初期投資額（万円）</label>
+                        <input type="number" id="principal" class="glass-input" value="100" min="0" step="10">
+                    </div>
+
+                    <div>
+                        <label class="input-label">年利率（%）</label>
+                        <input type="number" id="rate" class="glass-input" value="5" min="0" max="100" step="0.1">
+                    </div>
+
+                    <div>
+                        <label class="input-label">運用期間（年）</label>
+                        <input type="number" id="years" class="glass-input" value="20" min="1" max="100">
+                    </div>
+
+                    <div>
+                        <label class="input-label">毎月の積立額（万円）</label>
+                        <input type="number" id="monthly" class="glass-input" value="3" min="0" step="0.1">
+                    </div>
+                </div>
+
+                <button id="calc-btn" class="glass-btn"
+                    style="width: 100%; border-color: var(--accent-color); font-size: 1.1rem;">
+                    計算する
+                </button>
+
+                <div id="result" style="margin-top: 24px; display: none;">
+                    <div class="glass-panel" style="padding: 20px; background: rgba(56, 189, 248, 0.05);">
+                        <h3 style="margin-bottom: 16px; color: var(--accent-color);">計算結果</h3>
+                        <div style="display: grid; gap: 12px;">
+                            <div
+                                style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 2px solid var(--accent-color);">
+                                <span style="font-size: 1.1rem;">最終資産額</span>
+                                <strong id="final-amount"
+                                    style="color: var(--accent-color); font-size: 1.3rem;">-</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 8px 0;">
+                                <span>元本合計</span>
+                                <strong id="total-principal">-</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 8px 0;">
+                                <span>運用益</span>
+                                <strong id="total-profit" style="color: #34d399;">-</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="seo-section">
+                    <article class="seo-content">
+                        <h2>複利計算機とは？</h2>
+                        <p>
+                            複利とは、<strong>利息が利息を生む</strong>仕組みのことです。投資で得た利益を再投資することで、
+                            雪だるま式に資産が増えていきます。長期投資の威力を実感できる計算ツールです。
+                        </p>
+
+                        <h2>単利と複利の違い</h2>
+                        <ul>
+                            <li><strong>単利</strong>: 元本のみに利息がつく。例: 100万円を年利5%で10年運用 → 150万円</li>
+                            <li><strong>複利</strong>: 利息にも利息がつく。例: 100万円を年利5%で10年運用 → 約163万円</li>
+                        </ul>
+
+                        <h2>積立投資の威力</h2>
+                        <p>
+                            毎月一定額を積み立てることで、<strong>ドルコスト平均法</strong>の効果も得られます。
+                            例: 毎月3万円を年利5%で20年積立 → 元本720万円が約1,233万円に！
+                        </p>
+
+                        <h2>よくある質問 (FAQ)</h2>
+                        <div class="faq-item">
+                            <div class="faq-question">年利5%は現実的ですか？</div>
+                            <div class="faq-answer">米国株式市場の長期平均リターンは約7%とされています。インデックスファンドを活用すれば、年利5%は十分に現実的な目標です。</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">複利はいつから大きな効果が出ますか？</div>
+                            <div class="faq-answer">一般的に10年以上の長期運用で複利の効果が顕著になります。「72の法則」により、年利7%なら約10年で資産が倍になります。</div>
+                        </div>
+
+                        <h3>免責事項</h3>
+                        <p style="font-size: 0.9rem; color: #94a3b8;">
+                            本計算結果はシミュレーションであり、実際の投資成果を保証するものではありません。
+                            投資にはリスクが伴います。実際の投資判断は自己責任でお願いします。
+                        </p>
+                    </article>
+
+                    <div class="share-area">
+                        <a href="#" class="share-btn share-x">Xでシェア</a>
+                        <a href="#" class="share-btn share-line">LINEで送る</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/tools/interest/index.js"></script>
+</body>
+
+</html>
